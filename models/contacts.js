@@ -1,4 +1,4 @@
-// models/contacts.js
+
 const fs = require('fs/promises');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
@@ -55,7 +55,7 @@ const addContact = async (body) => {
     return { message: 'Contact with this email already exists', status: 400 };
   }
 
-  // Validate email format (you may add more validations)
+  
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return { message: 'Invalid email format', status: 400 };
@@ -82,7 +82,7 @@ const updateContact = async (contactId, body) => {
     return { message: 'Missing fields', status: 400 };
   }
 
-  // Validate email format (you may add more validations)
+ 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if ('email' in body && !emailRegex.test(body.email)) {
     return { message: 'Invalid email format', status: 400 };

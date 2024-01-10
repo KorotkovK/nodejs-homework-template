@@ -1,4 +1,4 @@
-/// Додати імпорт morgan
+
 const morgan = require('morgan');
 
 const express = require('express');
@@ -7,10 +7,10 @@ const contactsRouter = require('./routes/api/contacts');
 
 const app = express();
 
-// Вибір формату для logger в залежності від режиму
+
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 
-// Використовуйте `morgan` (замість `logger`)
+
 app.use(morgan(formatsLogger));
 
 app.use(express.json());
